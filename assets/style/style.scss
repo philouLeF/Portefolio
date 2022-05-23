@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin cardSettings {
+    border-radius: 0.5em;
+    box-shadow: 7px 3px 26px 1px rgba(0, 0, 0, 0.19);
+}
+
+$burgundy: #420e14;
+$blue: #324a5f;
+$pale: #e0ddcf;
+
+body {
+    @include flexColumn();
+    font-family: "Yantramanav";
+    background: linear-gradient(90deg, $burgundy 0%, $blue 100%);
+}
+
+hr {
+    border: 1px solid $burgundy;
+    width: 90%;
+    margin: 15px;
+}
+
+.card {
+    @include flexColumn();
+    @include cardSettings();
+    margin-top: 15px;
+    width: 50%;
+    background-color: $pale;
+    padding: 20px;
+}
+
+.intro {
+    @include flexColumn();
+
+    &__profile {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    &__job {
+        color: gray;
+        font-weight: 500;
+    }
+
+    &__contact {
+        @include cardSettings();
+        padding: 10px 15px;
+        background-color: $pale;
+        color: $blue;
+        border: 2px solid $pale;
+        margin: 10px;
+    }
+}
+
+.skills {
+    @include flexColumn();
+
+    &__skill {
+        @include cardSettings();
+        color: $pale;
+        padding: 10px 15px;
+        background-color: $burgundy;
+        margin: 5px;
+        width: 100px;
+        text-align: center;
+    }
+}
